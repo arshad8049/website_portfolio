@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research Blog — Arshad Ahmed Shaik</title>
+  <meta name="description" content="Research notes and papers by Arshad Ahmed Shaik: LLM evaluation, legal AI, computer vision for smart buildings, and e-health." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/sections.css" />
+  <link rel="stylesheet" href="../css/blog.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <a href="../index.html" class="nav__logo">AS<span class="accent">.</span></a>
+    <ul class="nav__links">
+      <li><a href="../index.html#path">Career Path</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="index.html" class="is-current">Blog</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="section">
+      <h2 class="section__title">Research <span class="accent">Blog</span></h2>
+      <p class="section__lead">
+        Long-form notes on the systems I build and study — LLM evaluation, legal AI,
+        computer vision for the built environment, and AI for public health.
+      </p>
+      <div class="blog-filter filter" id="blog-filter"></div>
+      <div class="blog-list" id="blog-list"></div>
+    </section>
+
+    <!-- Single-post reading view, hidden until a post is opened -->
+    <section class="section blog-reader" id="blog-reader" hidden>
+      <button class="btn btn--ghost" id="blog-back">← All posts</button>
+      <article class="blog-reader__article" id="blog-article"></article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner" id="footer-content"></div>
+  </footer>
+
+  <script type="module" src="../js/blog.js"></script>
+</body>
+</html>

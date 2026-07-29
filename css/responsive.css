@@ -1,0 +1,149 @@
+/* ===== Tablet and below ===== */
+@media (max-width: 900px) {
+  .cards--grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+
+  /* Soften the hero gradient so the 3D scene shows through on smaller screens */
+  .hero::after {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.82) 70%
+    );
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 680px) {
+  /* Hamburger nav */
+  .nav__toggle {
+    display: flex;
+  }
+
+  .nav__links {
+    position: fixed;
+    top: var(--nav-h);
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    width: min(78vw, 300px);
+    height: calc(100vh - var(--nav-h));
+    background: rgba(0, 0, 0, 0.96);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-left: 1px solid var(--border);
+    padding: 24px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .nav__links.is-open {
+    transform: translateX(0);
+  }
+
+  .nav__links a {
+    display: block;
+    padding: 14px 4px;
+    font-size: 1.05rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav__toggle.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav__toggle.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav__toggle.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Hero: stack content, keep the Spline scene and floating orbs alive */
+  .hero {
+    align-items: flex-end;
+    padding-bottom: 72px;
+  }
+
+  .hero__content {
+    pointer-events: auto;
+  }
+
+  .hero__stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  /* Floating orbs stay visible on mobile — repositioned so they frame the text
+     instead of sitting behind it */
+  .hero__float--1 {
+    width: 90px;
+    height: 90px;
+    top: 12%;
+    right: 6%;
+  }
+
+  .hero__float--2 {
+    width: 48px;
+    height: 48px;
+    top: 26%;
+    right: 34%;
+    bottom: auto;
+  }
+
+  .hero__float--3 {
+    width: 30px;
+    height: 30px;
+    top: 9%;
+    right: 48%;
+  }
+
+  .hero__scroll {
+    display: none;
+  }
+
+  /* Timeline tightens up */
+  .timeline {
+    padding-left: 20px;
+  }
+
+  .timeline .card::before {
+    left: -18px;
+  }
+
+  /* Flowchart scrolls horizontally with a hint of the next node */
+  .flowchart svg {
+    min-width: 860px;
+  }
+
+  .section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .numbers {
+    gap: 18px;
+  }
+}
+
+/* ===== Reduced motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  .hero__float,
+  .fc-edge,
+  .hero__scroll span {
+    animation: none;
+  }
+
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

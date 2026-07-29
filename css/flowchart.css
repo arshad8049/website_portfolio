@@ -1,0 +1,95 @@
+/* ===== Career-path flowchart ===== */
+.flowchart {
+  position: relative;
+  overflow-x: auto;
+  padding: 12px 0 24px;
+}
+
+.flowchart svg {
+  display: block;
+  min-width: 720px;
+  width: 100%;
+  height: auto;
+}
+
+.fc-edge {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.35);
+  stroke-width: 2;
+  stroke-dasharray: 6 6;
+  animation: fc-dash 30s linear infinite;
+}
+
+@keyframes fc-dash {
+  to { stroke-dashoffset: -600; }
+}
+
+.fc-node rect {
+  fill: var(--bg-card);
+  stroke: var(--border);
+  stroke-width: 1;
+  rx: 12;
+  transition: stroke 0.2s, filter 0.2s;
+}
+
+.fc-node text {
+  fill: var(--text);
+  font-family: var(--font);
+  font-weight: 700;
+}
+
+.fc-node .fc-node__sub {
+  fill: var(--text-dim);
+  font-weight: 500;
+}
+
+.fc-node {
+  cursor: pointer;
+}
+
+.fc-node:hover rect,
+.fc-node.is-active rect {
+  stroke: var(--accent);
+  filter: drop-shadow(0 0 14px var(--accent-glow));
+}
+
+.fc-node--pivot rect {
+  stroke: var(--accent-2);
+  stroke-dasharray: 5 4;
+}
+
+.fc-badge {
+  fill: url(#fc-gradient);
+}
+
+.fc-badge-text {
+  fill: #000;
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Detail panel below the chart */
+.fc-detail {
+  margin-top: 18px;
+  padding: 20px 22px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  min-height: 72px;
+  transition: opacity 0.25s;
+}
+
+.fc-detail h4 {
+  margin-bottom: 6px;
+  font-size: 1.05rem;
+}
+
+.fc-detail p {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+.fc-detail.is-swapping {
+  opacity: 0;
+}
