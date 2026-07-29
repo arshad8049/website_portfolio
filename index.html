@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arshad Ahmed Shaik — AI Engineer & Builder</title>
+  <meta name="description" content="AI Engineer specializing in LLMs, applied ML systems, and full-stack AI products. 5x hackathon winner. Portfolio, research, and career path of Arshad Ahmed Shaik." />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/flowchart.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav__logo">AS<span class="accent">.</span></a>
+    <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="#path">Career Path</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#hackathons">Hackathons</a></li>
+      <li><a href="#startup">Startup</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="hero">
+    <canvas id="spline-canvas" class="hero__spline" aria-hidden="true"></canvas>
+    <div class="hero__float hero__float--1" aria-hidden="true"></div>
+    <div class="hero__float hero__float--2" aria-hidden="true"></div>
+    <div class="hero__float hero__float--3" aria-hidden="true"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Fairfax, VA · AI Engineer</p>
+      <h1 class="hero__title">Arshad Ahmed<br /><span class="accent">Shaik</span></h1>
+      <p class="hero__subtitle" id="hero-subtitle"></p>
+      <div class="hero__cta">
+        <a href="#path" class="btn btn--primary">Explore my path</a>
+        <a href="#projects" class="btn btn--ghost">See projects</a>
+      </div>
+      <ul class="hero__stats" id="hero-stats"></ul>
+    </div>
+    <a href="#path" class="hero__scroll" aria-label="Scroll down"><span></span></a>
+  </header>
+
+  <main>
+    <!-- ===== CAREER PATH FLOWCHART ===== -->
+    <section class="section" id="path">
+      <h2 class="section__title">Career <span class="accent">Path</span></h2>
+      <p class="section__lead">From first line of code to LLM research — and a pivot toward the sky.</p>
+      <div class="flowchart" id="flowchart"></div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section class="section" id="education">
+      <h2 class="section__title">Education</h2>
+      <div class="cards" id="education-cards"></div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section class="section" id="experience">
+      <h2 class="section__title">Work <span class="accent">Experience</span></h2>
+      <p class="section__lead">In chronological order of complexity — each role a step up in scale and depth.</p>
+      <div class="timeline" id="experience-timeline"></div>
+    </section>
+
+    <!-- ===== HACKATHONS ===== -->
+    <section class="section" id="hackathons">
+      <h2 class="section__title">Hackathon <span class="accent">Wins</span></h2>
+      <p class="section__lead" id="hackathon-lead"></p>
+      <div class="cards" id="hackathon-cards"></div>
+    </section>
+
+    <!-- ===== STARTUP ===== -->
+    <section class="section section--dark" id="startup">
+      <h2 class="section__title">The Startup That <span class="accent">Almost</span> Was</h2>
+      <div id="startup-story"></div>
+    </section>
+
+    <!-- ===== RESEARCH ===== -->
+    <section class="section" id="research">
+      <h2 class="section__title">Research & <span class="accent">Impact</span></h2>
+      <div class="cards" id="research-cards"></div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="section" id="projects">
+      <h2 class="section__title">Projects</h2>
+      <div class="filter" id="project-filter"></div>
+      <div class="cards cards--grid" id="project-cards"></div>
+    </section>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="footer__inner" id="footer-content"></div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/spline-hero.js"></script>
+</body>
+</html>
