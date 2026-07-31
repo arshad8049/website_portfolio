@@ -17,7 +17,7 @@
   height: 100%;
   z-index: 0;
   /* Match the monochrome reference aesthetic regardless of scene colors */
-  filter: grayscale(1) contrast(1.05);
+  filter: grayscale(1) brightness(0.5) contrast(1.15);
 }
 
 /* Soft vignette so text stays readable over the 3D scene */
@@ -25,12 +25,20 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    ellipse at center 38%,
-    rgba(0, 0, 0, 0.78) 0%,
-    rgba(0, 0, 0, 0.45) 45%,
-    rgba(0, 0, 0, 0.05) 100%
-  );
+  /* Center vignette for text + edge fade to pure black so the scene
+     melts into the page background instead of showing gray corners */
+  background:
+    radial-gradient(
+      ellipse at center 38%,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.35) 45%,
+      rgba(0, 0, 0, 0) 68%
+    ),
+    radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0) 55%,
+      rgba(0, 0, 0, 0.85) 100%
+    );
   z-index: 1;
   pointer-events: none;
 }
@@ -62,7 +70,12 @@
   margin-bottom: 14px;
 }
 
+.hero__title .char {
+  display: inline-block; /* needed for per-char 3D transforms */
+}
+
 .hero__title {
+  font-family: var(--font-display);
   font-size: clamp(2.6rem, 8vw, 5.4rem);
   font-weight: 900;
   line-height: 1.04;

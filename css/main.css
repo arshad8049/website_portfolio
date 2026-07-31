@@ -10,7 +10,8 @@
   --accent-glow: rgba(255, 255, 255, 0.18);
   --border: rgba(255, 255, 255, 0.1);
   --radius: 14px;
-  --font: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Archivo", "Space Grotesk", -apple-system, sans-serif;
   --nav-h: 64px;
   --max-w: 1120px;
 }
@@ -125,6 +126,18 @@ img {
   max-width: var(--max-w);
   margin-left: auto;
   margin-right: auto;
+}
+
+h1, h2, h3, h4,
+.nav__logo {
+  font-family: var(--font-display);
+}
+
+/* Keyboard focus (ui-ux-pro-max checklist: visible focus, no removed rings) */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 .section__title {
